@@ -5,13 +5,13 @@ CONFIG	    WDT = OFF
 CONFIG	    LVP = OFF
 
 CBLOCK 0x000
-    #include "timer_cblock.inc"
+    #include "../HeaderFiles/timer_cblock.inc"
 ENDC
 
 ORG 0000H
     GOTO INIT
 ORG 0008H
-    #include "timer_interrupt_handling.inc"
+    #include "../HeaderFiles/timer_interrupt_handling.inc"
 
     ;s.t. If interrupted in STATUS sensitive instructions, the STATUS register will be restored to its original value
     RETFIE FAST
@@ -29,7 +29,7 @@ INIT
     MOVLW   0xFF
     MOVWF   PORTD
 
-    #include "timer_init.inc"
+    #include "../HeaderFiles/timer_init.inc"
 
     BSF     INTCON, GIE
 
@@ -37,6 +37,6 @@ MAIN
     MOVFF TMR0_COUNTER, PORTD
     GOTO MAIN
 
-#include "timer_ISR.inc"
+#include "../HeaderFiles/timer_ISR.inc"
 
 END
