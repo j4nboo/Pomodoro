@@ -42,7 +42,7 @@ file_002=no
 file_003=no
 file_004=no
 [FILE_INFO]
-file_000=main.asm
+file_000=Source Files\main.asm
 file_001=Pomodoro\Header Files\timer_cblock.inc
 file_002=Pomodoro\Header Files\timer_init.inc
 file_003=Pomodoro\Header Files\timer_interrupt_handling.inc
